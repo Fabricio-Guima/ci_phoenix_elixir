@@ -10,9 +10,9 @@ defmodule HelloWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
+  # pipeline :api do
+  #   plug :accepts, ["json"]
+  # end
 
   scope "/", HelloWeb do
     pipe_through :browser
@@ -20,6 +20,7 @@ defmodule HelloWeb.Router do
     get "/", PageController, :home
   end
 
+  # coveralls-ignore-start
   # Other scopes may use custom stacks.
   # scope "/api", HelloWeb do
   #   pipe_through :api
@@ -41,4 +42,6 @@ defmodule HelloWeb.Router do
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
+
+  # coveralls-ignore-stop
 end

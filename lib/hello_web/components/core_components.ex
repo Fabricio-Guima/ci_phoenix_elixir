@@ -21,7 +21,6 @@ defmodule HelloWeb.CoreComponents do
 
   alias Phoenix.LiveView.JS
 
-
   @doc """
   Renders a modal.
 
@@ -310,7 +309,6 @@ defmodule HelloWeb.CoreComponents do
       assign_new(assigns, :checked, fn ->
         Form.normalize_value("checkbox", assigns[:value])
       end)
-
 
     ~H"""
     <div>
