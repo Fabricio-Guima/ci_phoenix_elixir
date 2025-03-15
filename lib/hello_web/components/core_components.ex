@@ -17,7 +17,10 @@ defmodule HelloWeb.CoreComponents do
   use Phoenix.Component
   use Gettext, backend: HelloWeb.Gettext
 
+  alias Phoenix.HTML.Form
+
   alias Phoenix.LiveView.JS
+
 
   @doc """
   Renders a modal.
@@ -305,8 +308,9 @@ defmodule HelloWeb.CoreComponents do
   def input(%{type: "checkbox"} = assigns) do
     assigns =
       assign_new(assigns, :checked, fn ->
-        Phoenix.HTML.Form.normalize_value("checkbox", assigns[:value])
+        Form.normalize_value("checkbox", assigns[:value])
       end)
+
 
     ~H"""
     <div>
