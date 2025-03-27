@@ -29,5 +29,7 @@ jobs:
         run: mix deps.get
         if: steps.mix-cache-format.outputs.cache-hit != 'true' || steps.mix-cache-format.outputs.cache-hit == ''
 
+      - name: Clear cache
+        run: rm -rf deps
       - name: Format
         run: mix format --check-formatted
